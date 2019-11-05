@@ -13,4 +13,6 @@ public interface CustomerDAO {
     Customer getCustomerWithEmail(String email);
 
     void removeCustomer(String name);
+
+    void saveCustomer(Customer theCustomer);
 }
