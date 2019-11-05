@@ -15,7 +15,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
-import java.sql.DriverManager;
 
 @Configuration
 @PropertySource("classpath:automation.properties")
@@ -24,6 +23,7 @@ import java.sql.DriverManager;
 @EntityScan(basePackages="database/model")
 @EnableJpaRepositories(basePackages="database/repository")
 public class AutomationConfig {
+
     @Bean
     public DataSource getDataSource() {
         String url = "jdbc:mysql://localhost:3306/test";
@@ -35,5 +35,4 @@ public class AutomationConfig {
     public JdbcTemplate getTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
-
 }
