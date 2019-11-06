@@ -22,11 +22,12 @@ public class AutomationConfig {
 
     @Bean
     public DataSource getDataSource() {
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/shop";
         String username = "root";
         String password = "";
         return new DriverManagerDataSource(url, username, password);
     }
+
     @Bean
     public JdbcTemplate getTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);

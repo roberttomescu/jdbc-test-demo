@@ -10,9 +10,16 @@ public interface CustomerDAO {
 
     List<Customer> getCustomers();
 
-    Customer getCustomerWithEmail(String email);
+    int saveCustomer(Customer theCustomer);
 
-    void removeCustomer(String name);
+    int updateCustomer(Customer theCustomer);
 
-    void saveCustomer(Customer theCustomer);
+    List<Customer> getCustomerWithEmail(String email);
+
+    int removeCustomerWithEmail(String email);
+
+    List<Customer> getCustomerWithId(int id);
+
+    int removeCustomerWithId(int id);
+
 }
