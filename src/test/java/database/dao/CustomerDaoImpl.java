@@ -28,7 +28,7 @@ public class CustomerDaoImpl implements CustomerDAO {
 
     @Override
     public List<Customer> getCustomerWithEmail(String email) {
-        return jdbcTemplate.query("select * from customer where email = " + email, BeanPropertyRowMapper.newInstance(Customer.class));
+        return jdbcTemplate.query("select * from customer where email = '" + email + "'", BeanPropertyRowMapper.newInstance(Customer.class));
     }
 
     @Override
@@ -38,7 +38,7 @@ public class CustomerDaoImpl implements CustomerDAO {
 
     @Override
     public List<Customer> getCustomerWithId(int id) {
-        return jdbcTemplate.query("select * from customer where id = " + id, BeanPropertyRowMapper.newInstance(Customer.class));
+        return jdbcTemplate.query("select * from customer where id = '" + id + "'", BeanPropertyRowMapper.newInstance(Customer.class));
     }
 
     @Override
